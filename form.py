@@ -20,7 +20,7 @@ def sign_up():
     df = pd.DataFrame(user_data)
 
     with open("user_data.csv", "a") as file:
-        df.to_csv(file, index=False)
+        df.to_csv(file, index=False, header=file.tell()==0)
         status = "User data saved successfully to user_data.csv"
 
     print(status)
